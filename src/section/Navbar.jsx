@@ -15,14 +15,14 @@ const Navbar = ({...props}) => {
     <nav
       className={`h-full w-full navbar-padding-x flex justify-between items-center text-base font-bold text-kufi`}
     >
-      <div className="w-[180px] flex justify-between items-center">
+      <div className="w-[180px] flex justify-between items-center min-w-[150px]">
         <img
           src={props.isFixed ? logoLight : logoDark}
           alt="مانجا اون لاين"
           className="w-full"
         />
       </div>
-      <ul className="flex justify-between items-center max-lg:hidden whitespace-nowrap">
+      <ul className="flex justify-between items-center max-md:hidden whitespace-nowrap">
         <SectionName
           activeSection={props.activeSection}
           isFixed={props.isFixed}
@@ -52,11 +52,11 @@ const Navbar = ({...props}) => {
           sectionId='contact'
         />
       </ul>
-      <div className="max-lg:hidden">
-        <Button3 stylish="min-h-10 max-w-64 w-40" />
+      <div className="max-md:hidden">
+        <Button3 stylish="min-h-10 max-w-64 w-40 min-w-32" />
       </div>
 
-      <div className="lg:hidden" onClick={() => setOpenBarMenu(!openBarMenu)}>
+      <div className="md:hidden" onClick={() => setOpenBarMenu(!openBarMenu)}>
         <i
           className={`fa-solid fa-bars text-2xl hover:text-slate-400 duration-300 transition-colors cursor-pointer ${
             openBarMenu && "text-light-green-100"
@@ -68,7 +68,7 @@ const Navbar = ({...props}) => {
             <BarMenu handleClick={handleClick} />
             <div
               onClick={handleClick}
-              className="absolute w-screen h-screen top-0 right-0 bg-black opacity-75 -z-10"
+              className="w-screen h-screen top-0 right-0 bg-black opacity-75 z-40 fixed"
             ></div>
           </div>
         )}

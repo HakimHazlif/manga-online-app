@@ -4,7 +4,7 @@ const SectionName = ({ activeSection, isFixed, linkHref, text, sectionId }) => {
 
   return (
     <li
-      className={`px-5 py-[21px] w-full h-full group-in cursor-pointer duration-300 transition-colors relative ${
+      className={`lg:px-6 px-3 py-[21px] w-full h-full group-in cursor-pointer duration-300 transition-colors relative ${
         isFixed 
         ? activeSection === sectionId 
           ? "bg-[#26313ca2]" 
